@@ -1,0 +1,2 @@
+None — Playwright MCP not available in this session; HTTP-level checks performed instead.
+All 5 routes returned HTTP 200 with expected HTML structure and no server-side errors.
