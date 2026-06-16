@@ -930,6 +930,11 @@ body.menu-open .nav__overlay { display: block }
   grid-template-columns: repeat(2, 1fr);
   gap: 12px;
 }
+.co-2grid > *:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+  width: calc(50% - 6px);
+  justify-self: center;
+}
 .co-2card {
   position: relative;
   aspect-ratio: 1688 / 540;
@@ -1888,6 +1893,15 @@ body.menu-open .nav__overlay { display: block }
   transition: background var(--t-med), color var(--t-med);
 }
 .ctaband a:hover { background: #0D0D0D; color: #fff }
+
+.page-note {
+  text-align: center;
+  padding: clamp(24px, 4vw, 40px) clamp(16px, 5vw, 48px);
+  color: #666;
+  font-size: 1.0625rem;
+  border-top: 1px solid #e8e8e8;
+}
+.page-note p { margin: 0; line-height: 1.6; }
 @media (max-width: 1280px) { .projects__grid { grid-template-columns: repeat(4,1fr) } }
 @media (max-width: 980px)  { .projects__grid { grid-template-columns: repeat(3,1fr) } }
 @media (max-width: 740px)  { .projects__grid { grid-template-columns: repeat(2,1fr) } }

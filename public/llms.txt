@@ -1,0 +1,24 @@
+# MIMA Group
+
+> MIMA Group is a Pakistani multi-company engineering and construction conglomerate founded in the 1960s, comprising five specialist companies: MIMA Brothers (electrical contracting), MIMA Construction (civil and interior works), MIMA Facilities Management (integrated facility services), MIMA Engineering Pakistan (MEP and HVAC systems), and MPRO Mechanical Industries (electrical infrastructure manufacturing). The group has delivered projects for leading institutional, commercial, industrial, and government clients across Pakistan for over six decades.
+
+## Companies
+
+- [MIMA Brothers](https://mima.pk/mima-groups/electrical/): The founding company of the group, established in the 1960s. Specialises in electrical contracting for institutional and commercial clients across Pakistan.
+- [MIMA Construction](https://mima.pk/mima-groups/construction/): Established 2003. Delivers turnkey civil and interior works — from structural shell to handover-ready fit-out — for institutional, commercial, and hospitality projects.
+- [MIMA Facilities Management](https://mima.pk/mima-groups/facility/): Established 2009. Provides comprehensive and integrated facility management solutions with a focus on operational excellence and long-term value.
+- [MIMA Engineering Pakistan](https://mima.pk/mima-groups/engineering/): Established 2022. Engineering solutions company specialising in HVAC, vertical transportation, mechanical services, fire fighting systems, and plumbing infrastructure.
+- [MPRO Mechanical Industries](https://mima.pk/mima-groups/mpro/): Established 2019. Manufactures mechanical and electrical infrastructure products including GI/EMT conduits, cable trays, junction boxes, and cable management systems.
+
+## Pages
+
+- [About](https://mima.pk/about/): History, leadership, and the founding story of the MIMA Group.
+- [Portfolio](https://mima.pk/portfolio/): Showcase of completed projects across all group companies.
+- [Clients](https://mima.pk/clients/): Notable clients served by the MIMA Group including banks, hospitals, government bodies, and multinationals.
+- [Partners](https://mima.pk/partners/): Technology and supply-chain partners of the MIMA Group.
+
+## Contact
+
+- Website: https://mima.pk
+- General enquiries: mima.org@gmail.com
+- Careers: career@mima.pk

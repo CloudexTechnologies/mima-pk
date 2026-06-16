@@ -12,9 +12,9 @@ type Filter = 'all' | 'multinational' | 'banks' | 'hospitals' | 'education' | 'c
 const SECTOR_META: Record<Filter, { title: string; lede: string; crumb: string; bg?: string }> = {
   all:           { title: 'Building across sectors. Delivering lasting impact.',      lede: "Trusted by Pakistan's leading institutions since 1959, from heritage restoration to high-spec multinational headquarters.", crumb: 'Portfolio' },
   multinational: { title: 'Multinational headquarters & facilities.',                lede: 'Purpose-built offices and laboratories for global firms operating in Pakistan, delivered to international fit and finish standards.',  crumb: 'Multinational Companies' },
-  banks:         { title: 'Banks & financial institutions.',                         lede: 'Branch rollouts, regional offices, and heritage restorations, discreet, secure, and on-brand.',              crumb: 'Banks', bg: '/portfolio/Banks/1%20standard%20chartered.png' },
+  banks:         { title: 'Banks & financial institutions.',                         lede: 'Branch rollouts, regional offices, and heritage restorations, discreet, secure, and on-brand.',              crumb: 'Banks', bg: '/portfolio/Banks/1%20standard%20chartered.webp' },
   hospitals:     { title: 'Hospitals & healthcare.',                                 lede: 'Specialised MEP, medical-gas, and clean-room work for tertiary care, ICUs, and surgical floors.',           crumb: 'Hospitals', bg: '/portfolio/Hospital/LNH.jpg' },
-  education:     { title: 'Education & research campuses.',                          lede: 'Academic blocks, research labs, and technology parks, built for long teaching lifetimes.',                   crumb: 'Education' },
+  education:     { title: 'Education & research campuses.',                          lede: 'Academic blocks, research labs, and technology parks, built for long teaching lifetimes.',                   crumb: 'Education', bg: '/portfolio/Education/ivs.jpg' },
   commercials:   { title: 'Commercials, retail, F&B, offices.',                      lede: 'Flagship showrooms, restaurants, and commercial towers, handed over on schedule, on-brand.',                crumb: 'Commercials', bg: '/portfolio/Commericals/muller-phipps.jpg' },
   npos:          { title: 'Non-profit institutions.',                                lede: 'Outreach centres, community facilities, and heritage restoration for charitable foundations.',               crumb: 'NPOs' },
 }
@@ -90,7 +90,6 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'hospitals', img:'/portfolio/Hospital/sch.jpg',                           name:'South City Hospital',               bullets:['MEP works','Electrical systems','Mechanical & plumbing'] },
   { cat:'hospitals', img:'/portfolio/Hospital/patel%20hospital%20enh.png',        name:'Patel Hospital,3rd & 4th Floor',    bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
   { cat:'hospitals', img:`/portfolio/Hospital/medicare%20enhanced.png?v=${HOSPITAL_IMAGE_VERSION}`,           name:'Medicare Heart Hospital',           bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
-  { cat:'hospitals', img:'/portfolio/Hospital/JPMC.jpeg',                         name:'JPMC Surgical & Oncology Complex',  bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
 
   // ── Education ──
   { cat:'education', img:'/portfolio/Education/iba%20gh%20enhanced.png',          name:'IBA Karachi',                       bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
@@ -102,7 +101,6 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   // ── Commercials ──
   { cat:'commercials', img:'/portfolio/Commericals/muller-phipps.jpg',            name:'Muller & Phipps',                   bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/parco%20emerald%20tower.jpg',  name:'PARCO Offices, Emerald Tower',      bullets:['Electrical works','HVAC systems','Firefighting works'] },
-  { cat:'commercials', img:'/portfolio/Commericals/pict%20.jpg',                  name:'PICT',                              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/fpcl%20.jpg',                  name:'FPCL',                              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/dialog-axiata.jpg',            name:'Dialog Axiata',                     bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/one%20ibl%20tower.jpeg',       name:'One IBL Center',                    bullets:['Civil & interior finishing','Electrical works','IT systems'] },
@@ -110,7 +108,7 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'commercials', img:'/portfolio/Commericals/continental%20biscuit%20.jpg', name:'Continental Biscuits',              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/k%20electric%20.jpg',          name:'K-Electric KTGTP Grid Station',     bullets:['Civil works','Electrical & IT works','HVAC systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/oasis%20aqua%20resort.jpg',    name:'Oasis Golf & Aqua Resort',           bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/bay-international.png',         name:'Bays International',         bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
+  { cat:'commercials', img:'/portfolio/Commericals/bays%20international.jpeg',      name:'Bays International',         bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:`/portfolio/Commericals/feroze%201888.jpeg?v=${COMMERCIAL_IMAGE_VERSION}`,           name:'Feroze 1888',                       bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/Amreli-Steel.webp',            name:'Amreli Steels',                     bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/martin%20dow%20.jpg',          name:'Martin Dow,Head Office',            bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
@@ -118,21 +116,20 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'commercials', img:'/portfolio/Commericals/NASTEP.jpeg',                  name:'NASTP',                             bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/crescent%20steel%20and%20allied%20power.jpg', name:'Crescent Steel & Allied Power', bullets:['Civil & MS structure','Electrical works','Allied MEP works'] },
   { cat:'commercials', img:'/portfolio/Commericals/hilal%20foods%20.jpeg',        name:'Hilal Foods,New Line 5',            bullets:['Electrical works','Power systems','Control systems'] },
-  { cat:'commercials', img:'/portfolio/Commericals/hilal-foods-office.jpeg',      name:'Hilal Foods,Office Works',          bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/dolmen-mall.jpg',              name:'Dolmen Mall',                       bullets:['Civil & interior finishing','Electrical works','AC & HVAC systems'] },
-  { cat:'commercials', img:'/portfolio/Commericals/lucky%20one%20.jpg',           name:'LuckyOne Mall,Tarzz Outlet',        bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
+  { cat:'commercials', img:'/portfolio/Commericals/lucky%20one%20.jpg',           name:'LuckyOne Mall',                     bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/outfitters%20.png',            name:'Outfitters,Multi-City Rollout',     bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/dhanak.webp',                  name:'Dhanak',                            bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/sana%20safinaz.jpeg',          name:'Sana Safinaz,Head Office',          bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/goolotlo.png',                 name:'Golootlo,4 Floors, Karachi',        bullets:['Electrical & ELV works','Multi-floor fit-out','IT systems'] },
-  { cat:'commercials', img:'/portfolio/Commericals/OBS.jpeg',                     name:'OBS Pharma',                        bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
+  { cat:'commercials', img:'/portfolio/Commericals/searle.jpeg',                  name:'OBS Pharma',                        bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/tcs-office.jpg',               name:'TCS Pakistan',                      bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/peng.png',                     name:"Peng's Salon",                      bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/kanteen.jpeg',                 name:'Khaadi Kanteen',                    bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
+  { cat:'commercials', img:'/portfolio/Commericals/ghalib.jpeg',                  name:'Khaadi Kanteen',                    bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/tarzz.png',                    name:'Tarzz',                             bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/ghalib.jpeg',                  name:'Ghalib',                            bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
+  { cat:'commercials', img:'/portfolio/Commericals/ghalib.jpg',                   name:'Ghalib',                            bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/brookes%20pharma%20.jpg',      name:'Brookes Pharma',                    bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/qureshi%20group%20.png',       name:'Qureshi Group',                     bullets:['MEP works','Mechanical systems','Electrical & plumbing'], bg:'#ffffff' },
+  { cat:'commercials', img:'/portfolio/Commericals/qureshi-groups.jpg',           name:'Qureshi Group',                     bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/shan.jpg',                     name:'Shan Foods',                        bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/dalda.webp',                   name:'Dalda',                             bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/national%20foods.jpeg',        name:'National Foods',                    bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
@@ -140,19 +137,18 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'commercials', img:'/portfolio/Commericals/KBC.jpeg',                     name:'Karachi Boating Club',              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/malak.jpeg',                   name:'Malak',                             bullets:['MEP works','Electrical systems','HVAC & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/world%20wide%20group.jpg',     name:'World Wide Group',                  bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/mezan.jpg',                    name:'Mezan',                             bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
+  { cat:'commercials', img:'/portfolio/Commericals/meezan.jpeg',                  name:'Mezan',                             bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:`/portfolio/Commericals/dbrwed.jpg?v=${COMMERCIAL_IMAGE_VERSION}`,                   name:"dBrew'd",                           bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
-  { cat:'commercials', img:'/portfolio/Commericals/searle.jpeg',                  name:'Searle Company',                    bullets:['Civil & MS structure','Electrical works','Allied MEP works'] },
+  { cat:'commercials', img:'/portfolio/Commericals/OBS.jpeg',                     name:'Searle Company',                    bullets:['Civil & MS structure','Electrical works','Allied MEP works'] },
   { cat:'commercials', img:'/portfolio/Commericals/koel.webp',                    name:'Koel',                              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/naurattan.png',                name:'Naurattan Jewellers',               bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
 
   // ── NPOs ──
   { cat:'npos', img:'/portfolio/NPOS/hunar-foundation.png',                       name:'Hunar Foundation',        bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
   { cat:'npos', img:'/portfolio/NPOS/shaheen%20foundation.jpg',                   name:'Shaheen Foundation',      bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
-  { cat:'npos', img:'/portfolio/NPOS/patient-aids-foundation.jpg',                name:'Patients Aid Foundation', bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
+  { cat:'npos', img:'/portfolio/Hospital/JPMC.jpeg',                              name:'JPMC Surgical & Oncology Complex, Patient Aid Foundation', bullets:['Civil & interior finishing','Electrical works','IT & ELV systems'] },
   { cat:'npos', img:'/portfolio/NPOS/al%20khidmat%20foundation.jpeg',             name:'Al Khidmat Foundation',   bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
   { cat:'npos', img:'/portfolio/NPOS/tcs-foundation.png',                         name:'The Citizens Foundation', bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
-  { cat:'npos', img:'/portfolio/NPOS/al-hilal-sfc.webp',                          name:'Al Hilal SFC',            bullets:['MEP works','Electrical systems','Plumbing & HVAC'], bg:'#ffffff' },
 ]
 
 function PortfolioContent() {
@@ -179,11 +175,12 @@ function PortfolioContent() {
   const visible = PROJECTS.filter(p => filter === 'all' || p.cat === filter)
 
   const heroImg = filter === 'all'
-    ? '/portfolio/MNCs/1%20sgs.png'
-    : (meta.bg ?? PROJECTS.find(p => p.cat === filter)?.img ?? '/portfolio/MNCs/1%20sgs.png')
+    ? '/portfolio/MNCs/1%20sgs.webp'
+    : (meta.bg ?? PROJECTS.find(p => p.cat === filter)?.img ?? '/portfolio/MNCs/1%20sgs.webp')
 
   return (
     <>
+      <link rel="preload" as="image" href={heroImg} />
       <Nav transparent />
 
       {/* Page hero */}
@@ -238,10 +235,8 @@ function PortfolioContent() {
         </div>
       </section>
 
-      {/* CTA band */}
-      <div className="ctaband">
-        <h3>Ready to discuss your project?</h3>
-        <Link href="/#contact">Get In Touch <span aria-hidden="true">→</span></Link>
+      <div className="page-note">
+        <p>Showcasing a selection of our completed and ongoing projects, with many more across various sectors.</p>
       </div>
 
       <Footer />

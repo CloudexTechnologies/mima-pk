@@ -11,12 +11,13 @@ export const metadata: Metadata = { title: 'About' }
 export default function AboutPage() {
   return (
     <>
+      <link rel="preload" as="image" href="/backgrounds/standard-chartered.webp" />
       <Nav transparent />
       <PageHero
         label="About"
         crumb="About"
-        title="A quiet, enduring record of building for Pakistan's institutions."
-        image="/backgrounds/standard-chartered.png"
+        title="A quiet, enduring record of building for Pakistan."
+        image="/backgrounds/standard-chartered.webp"
       />
 
       {/* Intro */}
@@ -28,7 +29,7 @@ export default function AboutPage() {
               <h2 className="display h2">An institutional construction partner, not a contractor.</h2>
               <p>
                 Since our founding in 1959, MIMA has been a quiet partner to Pakistan&apos;s leading
-                institutions, banks, hospitals, multinational companies, universities, and
+                banks, hospitals, multinational companies, universities, and
                 non-profits. Our reputation is built on technical depth, on-time delivery, and
                 a refusal to take shortcuts.
               </p>
@@ -46,7 +47,7 @@ export default function AboutPage() {
 
             <RevealOnScroll delay={1} className="intro__right">
               <div className="intro__img intro__img--contain">
-                <Image src="/backgrounds/meezan-bank-001.png" alt="Meezan Bank — MIMA Construction project" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'contain' }} priority />
+                <Image src="/backgrounds/meezan-bank-001.webp" alt="Meezan Bank — MIMA Construction project" fill sizes="(max-width: 768px) 100vw, 50vw" style={{ objectFit: 'contain' }} priority />
               </div>
             </RevealOnScroll>
           </div>

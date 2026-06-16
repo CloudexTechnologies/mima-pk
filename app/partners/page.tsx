@@ -4,6 +4,7 @@ import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
 type LogoCell = { src: string; alt: string; sq?: boolean; lg?: boolean; xl?: boolean }
+const INTEG_LOGO = '/partner-logos/integ.png?v=20260616'
 
 const PARTNERS: LogoCell[] = [
   // — ordered by client-supplied list —
@@ -12,7 +13,7 @@ const PARTNERS: LogoCell[] = [
   { src: '/partner-logos/arcop.png',                                  alt: 'Arcop' },
   { src: '/partner-logos/eleken.png',                                 alt: 'ElekEn Associates' },
   { src: '/partner-logos/asa.png',                                    alt: 'Arshad Shahid Abdulla' },
-  { src: '/partner-logos/integ.png',                                  alt: 'Integg' },
+  { src: INTEG_LOGO,                                                  alt: 'INTEG Integrated Engineering Services' },
   { src: '/partner-logos/arif-belguami.png',                          alt: 'Arif Belgaumi Architects' },
   { src: '/partner-logos/Mushtaq-Bilal.png',                          alt: 'Mushtaq and Bilal Consulting Engineers' },
   { src: '/partner-logos/aaa-partnership.png',                        alt: 'AAA Partnership Pvt. Ltd' },
@@ -43,7 +44,6 @@ const PARTNERS: LogoCell[] = [
   { src: '/partner-logos/AA-Tecno-Engineers.png',                     alt: 'AA Tecno Engineers' },
   { src: '/partner-logos/asif-associates.png',                        alt: 'Asif Associates' },
   { src: '/partner-logos/associated-technical-consultant.png',        alt: 'Associated Technical Consultant' },
-  { src: '/partner-logos/atlas-battery.png',                          alt: 'Atlas Battery' },
   { src: '/partner-logos/ayub-associates.png',                        alt: 'Ayub Associates' },
   { src: '/partner-logos/bilgrami%26partners.png',                    alt: 'Bilgrami & Partners' },
   { src: '/partner-logos/design-architecture.png',                    alt: 'Design Architecture' },
@@ -53,6 +53,7 @@ const PARTNERS: LogoCell[] = [
   { src: '/partner-logos/impact-design.png',                          alt: 'Impact Design' },
   { src: '/partner-logos/imran-motors.png',                           alt: 'Imran Motors' },
   { src: '/partner-logos/KP-associates.png',                          alt: 'KP Associates' },
+  { src: '/partner-logos/yh-associates.png',                          alt: 'YH Associates' },
   { src: '/partner-logos/lotia-sons.png',                             alt: 'Lotia Sons' },
   { src: '/partner-logos/matrix-engineering.png',                     alt: 'Matrix Engineering' },
   { src: '/partner-logos/mb-associates.png',                          alt: 'MB Associates' },
@@ -64,19 +65,18 @@ const PARTNERS: LogoCell[] = [
   { src: '/partner-logos/turnkey-groups.png',                         alt: 'Turnkey Groups' },
   { src: '/partner-logos/TYA-Associates.png',                         alt: 'TYA Associates' },
   { src: '/partner-logos/universal-consultant.png',                   alt: 'Universal Consultant' },
-  { src: '/partner-logos/urdu-point.png',                             alt: 'Urdu Point' },
   { src: '/partner-logos/vplanners.png',                              alt: 'V Planners' },
   { src: '/partner-logos/wazir-associates.png',                       alt: 'Wazir Associates' },
-  { src: '/partner-logos/yh-associates.png',                          alt: 'YH Associates' },
 ]
 
 export default function PartnersPage() {
   return (
     <>
+      <link rel="preload" as="image" href="/backgrounds/habbit.webp" />
       <Nav transparent />
 
       {/* Hero */}
-      <section className="phero phero--has-bg" style={{ backgroundImage: 'url(/backgrounds/habbit.png)', backgroundPosition: 'center 30%' }}>
+      <section className="phero phero--has-bg" style={{ backgroundImage: 'url(/backgrounds/habbit.webp)', backgroundPosition: 'center 30%' }}>
         <div className="container">
           <div className="phero__crumbs">
             <Link href="/">MIMA Group</Link>
@@ -124,6 +124,10 @@ export default function PartnersPage() {
           </div>
         </div>
       </section>
+
+      <div className="page-note">
+        <p>Collaborating with a wider network of trusted partners and associates.</p>
+      </div>
 
       <Footer />
     </>

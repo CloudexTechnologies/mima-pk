@@ -27,14 +27,13 @@ export default function Footer() {
               <li><Link href="/mima-groups/construction">MIMA Construction</Link></li>
               <li><Link href="/mima-groups/facility">MIMA Facilities Management</Link></li>
               <li><Link href="/mima-groups/engineering">MIMA Engineering</Link></li>
-              <li><Link href="/mima-groups/mpro">MPRO</Link></li>
             </ul>
           </div>
           <div className="footer__contact">
             <h4>Contact</h4>
             <p>Central Hotel Building<br />Civil Lines, Karachi</p>
             <p>+92 21 35685645<br />+92 21 35220466</p>
-            <p>mima.org@gmail.com</p>
+            <p><a href="mailto:info@mima.pk">info@mima.pk</a></p>
             <a
               href="https://www.linkedin.com/company/mima-construction-pk/"
               target="_blank"

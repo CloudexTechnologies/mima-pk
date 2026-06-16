@@ -92,7 +92,6 @@ const EDUCATION: LogoCell[] = [
 const COMMERCIALS: LogoCell[] = [
   // Industrial & corporate
   { src:'/clients/image_1779126266922.png',                              alt:'PARCO',              lg:true },
-  { src:'/clients/pict.png',                                             alt:'PICT' },
   { src:'/clients/FFBL_-_FPCL_Logo.png',                                alt:'FFBL / FPCL' },
   { src:'/clients/Dialog_Axiata_logo.svg.png',                           alt:'Dialog Axiata' },
   { src:'/clients/ibl.png',                                              alt:'IBL' },
@@ -147,7 +146,6 @@ const NPOS: LogoCell[] = [
   { src:'/clients/LOGO_PAF.png',                        alt:"Patients' Aid Foundation",  sq:true },
   { src:'/clients/ALKHIDMAT-Logo.png',                  alt:'Al Khidmat Foundation' },
   { src:'/clients/TCF-Filled-Logo-small.png',           alt:'The Citizens Foundation' },
-  { src:'/clients/al-hilal-sfc-logo-high-quality-transparent-image-free-png.webp', alt:'Al Hilal SFC', sq:true },
 ]
 
 const SECTIONS: { id: Category; num: string; title: string; count: string; logos: LogoCell[] }[] = [
@@ -198,10 +196,11 @@ export default function ClientsPage() {
 
   return (
     <>
+      <link rel="preload" as="image" href="/backgrounds/obs-pharma2.webp" />
       <Nav transparent />
 
       {/* Hero */}
-      <section className="phero phero--has-bg" style={{ backgroundImage: 'url(/backgrounds/obs-pharma2.png)' }}>
+      <section className="phero phero--has-bg" style={{ backgroundImage: 'url(/backgrounds/obs-pharma2.webp)' }}>
         <div className="container">
           <div className="phero__crumbs">
             <Link href="/">MIMA Group</Link>
@@ -251,6 +250,10 @@ export default function ClientsPage() {
             </div>
           </section>
         ))}
+      </div>
+
+      <div className="page-note">
+        <p>Proudly serving a growing portfolio of valued clients across different industries.</p>
       </div>
 
       <Footer />

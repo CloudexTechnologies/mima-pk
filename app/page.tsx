@@ -13,20 +13,22 @@ export const metadata: Metadata = {
 }
 
 const companies = [
-  { logo: '/mima-mbros.png',    est: 'Est. 1960s', sector: 'Electrical & HVAC Contracting', name: 'MIMA Brothers',            href: '/mima-groups/electrical'  },
-  { logo: '/mima-const.png',    est: 'Est. 2003',  sector: 'Civil & Interior Works',         name: 'MIMA Construction',        href: '/mima-groups/construction' },
-  { logo: '/mima-facility.png', est: 'Est. 2009',  sector: 'Facility Management',            name: 'MIMA Facilities Management', href: '/mima-groups/facility'   },
-  { logo: '/mima-eng.png',      est: 'Est. 2012',  sector: 'MEP & Engineering',              name: 'MIMA Engineering',         href: '/mima-groups/engineering' },
+  { logo: '/mima-mbros.png',    est: 'Est. 1960s', sector: 'Electrical & HVAC Contracting',       name: 'MIMA Brothers',              href: '/mima-groups/electrical'  },
+  { logo: '/mima-const.png',    est: 'Est. 2003',  sector: 'Civil & Interior Works',               name: 'MIMA Construction',          href: '/mima-groups/construction' },
+  { logo: '/mima-facility.png', est: 'Est. 2009',  sector: 'Facility Management',                  name: 'MIMA Facilities Management', href: '/mima-groups/facility'     },
+  { logo: '/mima-eng.png',      est: 'Est. 2012',  sector: 'MEP & Engineering',                    name: 'MIMA Engineering',           href: '/mima-groups/engineering'  },
 ]
 
 const sectors = [
-  { num: '01', label: 'Multinational',   count: 'SKF · Oracle · IBM · Microsoft', img: '/mncs/SGC.jpeg',                         href: '/portfolio?cat=multinational', name: 'Multinational Companies' },
-  { num: '02', label: 'Banks',           count: 'HBL · Meezan · Allied',          img: '/old-project/standard-chartered.png',    href: '/portfolio?cat=banks',         name: 'Banks' },
-  { num: '03', label: 'Hospitals',       count: 'NICVD · Indus · Aga Khan',       img: '/old-project/liaqat-national.jpeg',      href: '/portfolio?cat=hospitals',     name: 'Hospitals' },
-  { num: '04', label: 'Education',       count: 'NASTP · Universities',           img: '/education/iba%20enhanced.png',          href: '/portfolio?cat=education',     name: 'Education' },
-  { num: '05', label: 'Commercials',     count: 'Retail · F&B · Offices',         img: '/old-project/goolotlo.png',              href: '/portfolio?cat=commercials',   name: 'Commercials' },
-  { num: '06', label: 'NPOs',            count: 'Non-Profit Institutions',         img: '/NPO/hunar-foundation.png',              href: '/portfolio?cat=npos',          name: 'NPOs', imgPos: '30% center' },
+  { num: '01', label: 'Multinational',   count: 'SKF · Oracle · IBM · Microsoft', img: '/portfolio/MNCs/1%20sgs.png',                           href: '/portfolio?cat=multinational', name: 'Multinational Companies' },
+  { num: '02', label: 'Banks',           count: 'HBL · Meezan · Allied',          img: '/old-project/standard-chartered.png',                    href: '/portfolio?cat=banks',         name: 'Banks' },
+  { num: '03', label: 'Hospitals',       count: 'NICVD · Indus · Aga Khan',       img: '/old-project/liaqat-national.jpeg',                      href: '/portfolio?cat=hospitals',     name: 'Hospitals' },
+  { num: '04', label: 'Education',       count: 'NASTP · Universities',           img: '/portfolio/Education/ivs.jpg',                           href: '/portfolio?cat=education',     name: 'Education' },
+  { num: '05', label: 'Commercials',     count: 'Retail · F&B · Offices',         img: '/old-project/goolotlo.png',                              href: '/portfolio?cat=commercials',   name: 'Commercials' },
+  { num: '06', label: 'NPOs',            count: 'Non-Profit Institutions',         img: '/portfolio/Hospital/JPMC.jpeg',                          href: '/portfolio?cat=npos',          name: 'NPOs', imgPos: '30% center' },
 ]
+
+const INTEG_LOGO = '/partner-logos/integ.png?v=20260616'
 
 /* Marquee partner sets (Architects & Consultants) */
 const partnerRow1 = [
@@ -35,7 +37,7 @@ const partnerRow1 = [
   { src: '/partner-logos/arcop.png',                                 alt: 'Arcop' },
   { src: '/partner-logos/eleken.png',                                alt: 'ElekEn Associates' },
   { src: '/partner-logos/asa.png',                                   alt: 'Arshad Shahid Abdulla' },
-  { src: '/partner-logos/integ.png',                                 alt: 'Integg' },
+  { src: INTEG_LOGO,                                                 alt: 'INTEG Integrated Engineering Services' },
   { src: '/partner-logos/arif-belguami.png',                         alt: 'Arif Belgaumi Architects' },
   { src: '/partner-logos/Mushtaq-Bilal.png',                         alt: 'Mushtaq and Bilal' },
   { src: '/partner-logos/aaa-partnership.png',                       alt: 'AAA Partnership' },
@@ -99,7 +101,7 @@ const partnerRow3 = [
   { src: '/partner-logos/arcop.png',                                 alt: 'Arcop' },
   { src: '/partner-logos/eleken.png',                                alt: 'ElekEn Associates' },
   { src: '/partner-logos/asa.png',                                   alt: 'Arshad Shahid Abdulla' },
-  { src: '/partner-logos/integ.png',                                 alt: 'Integg' },
+  { src: INTEG_LOGO,                                                 alt: 'INTEG Integrated Engineering Services' },
   { src: '/partner-logos/najmi.png',                                 alt: 'Najmi Bilgrami' },
   { src: '/partner-logos/matrix-consultants.png',                    alt: 'Matrix Consultants' },
   { src: '/partner-logos/Ahed-Associate.png',                        alt: 'Ahed Associates' },
@@ -167,7 +169,6 @@ const row3 = [
   { src: '/clients/Searle_Company_logo.svg',                                 alt: 'Searle' },
   { src: '/clients/Martin_Dow_logo.png',                                     alt: 'Martin Dow' },
   { src: '/clients/national-foods-logo.png',                                 alt: 'National Foods' },
-  { src: '/clients/pict.png',                                                alt: 'PICT' },
   { src: '/clients/Sana_Safinaz_logo.png',                                   alt: 'Sana Safinaz' },
 ]
 
@@ -237,7 +238,7 @@ export default function HomePage() {
           <RevealOnScroll className="companies__head">
             <span className="label label--blue">Our Companies</span>
             <h2 className="display h2">
-              Five Specialised Companies. One Shared Commitment.
+              Four Specialised Companies. One Shared Commitment.
             </h2>
             <p>Each division operates with its own technical leadership while sharing the group&apos;s
               standards for quality, safety, and on-time delivery.</p>

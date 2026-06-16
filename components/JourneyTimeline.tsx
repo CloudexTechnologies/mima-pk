@@ -9,7 +9,7 @@ const entries = [
     title: 'The Beginning',
     body: 'Mr. Muhammad Sultan Ashraf established a small electrical hardware shop in Ranchore Lane, Karachi — the foundation of what would later become the MIMA Group.',
     label: 'Ranchore Lane · Karachi, 1960',
-    image: '/timeline-one.png',
+    image: '/old-project/1960.png',
     contain: false,
   },
   {
@@ -17,7 +17,7 @@ const entries = [
     title: 'MIMA & Brothers Formed',
     body: 'MIMA & Brothers was established to expand into electrical contracting and engineering services, quickly building a reputation for quality and reliability across Pakistan.',
     label: 'Early contracting team · site work',
-    image: '/backgrounds/meezan-bank-001.png',
+    image: '/backgrounds/meezan-bank-001.webp',
     contain: true,
   },
   {
@@ -25,7 +25,7 @@ const entries = [
     title: 'MIMA Construction Established',
     body: 'MIMA Construction was launched to provide civil works and integrated construction solutions, delivering turnkey projects across institutional, commercial, and hospitality sectors.',
     label: 'Schön Centre · Karachi',
-    image: '/time01.png',
+    image: '/office-enhanced.png',
     contain: false,
   },
   {
@@ -33,7 +33,7 @@ const entries = [
     title: 'MIMA Facilities Management Launched',
     body: "MIMA Facilities Management (MFM) was established to provide complete facility management services, strengthening the group's end-to-end infrastructure capabilities.",
     label: 'Standard Chartered facilities',
-    image: '/office-enhanced.png',
+    image: '/old-project/MFM 2009 .png',
     contain: false,
   },
   {
@@ -41,7 +41,7 @@ const entries = [
     title: 'MPRO Mechanical Industries Established',
     body: 'MPRO Mechanical Industries was launched to manufacture mechanical and electrical infrastructure products, serving commercial, industrial, and infrastructure projects with high-quality engineering solutions.',
     label: 'Manufacturing floor · MPRO',
-    image: '/old-project/ghalib.png',
+    image: '/old-project/mpro 2019 .png',
     contain: false,
   },
   {
@@ -49,7 +49,7 @@ const entries = [
     title: 'MIMA Engineering Pakistan Established',
     body: 'MIMA Engineering Pakistan was formed to deliver integrated engineering solutions for modern infrastructure — specialising in HVAC, vertical transportation, fire protection, plumbing, and mechanical systems.',
     label: 'HVAC & MEP systems installation',
-    image: '/old-project/mpro-02.png',
+    image: '/old-project/2022 mima eng.webp',
     contain: false,
   },
 ]
