@@ -208,6 +208,7 @@ function MarqueeRow({ items, cls }: { items: typeof row1; cls?: string }) {
 export default function HomePage() {
   return (
     <>
+      <link rel="preload" as="image" href="/backgrounds/indus.png" />
       <Nav transparent />
 
       {/* ===== HERO ===== */}
@@ -253,6 +254,7 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1320px) 50vw, 660px"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
+                  priority={i < 2}
                 />
                 <div className="co-2card__overlay">
                   <Link className="co-2card__cta" href={co.href}>
@@ -294,7 +296,7 @@ export default function HomePage() {
           <div className="sectors">
             {sectors.map((s, i) => (
               <RevealOnScroll key={s.name} delay={(i % 3) as 0 | 1 | 2} tag="a" className="sector" href={s.href}>
-                <Image src={s.img} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover', objectPosition: (s as any).imgPos ?? 'center' }} />
+                <Image src={s.img} alt="" fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: 'cover', objectPosition: (s as any).imgPos ?? 'center' }} priority={i === 0} />
                 <span className="sector__num">{s.num} / {s.label}</span>
                 <div className="sector__body">
                   <h3 className="sector__name">{s.name}</h3>

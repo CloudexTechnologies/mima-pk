@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { DM_Sans, Dancing_Script } from 'next/font/google'
 import './globals.css'
+import ImagePrefetcher from '@/components/ImagePrefetcher'
 
 const dmSans = DM_Sans({
   subsets: ['latin'],
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en" className={`${dmSans.variable} ${dancingScript.variable}`}>
       <body style={{ fontFamily: '"DM Sans", system-ui, sans-serif' }}>
         {children}
+        <ImagePrefetcher />
       </body>
     </html>
   )
