@@ -7,9 +7,9 @@ const entries = [
   {
     year: '1960',
     title: 'The Beginning',
-    body: 'Mr. Muhammad Sultan Ashraf established a small electrical hardware shop in Ranchore Lane, Karachi — the foundation of what would later become the MIMA Group.',
+    body: 'Mr. Muhammad Sultan Ashrafi established a small electrical hardware shop in Ranchore Lane, Karachi. The foundation of what would later become the MIMA Group.',
     label: 'Ranchore Lane · Karachi, 1960',
-    image: '/old-project/1960.png',
+    image: '/1960.jpg',
     contain: false,
   },
   {
