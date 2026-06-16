@@ -31,6 +31,7 @@ export default async function CompanyPage({ params }: Props) {
 
   return (
     <>
+      <link rel="preload" as="image" href={co.heroImage} />
       <Nav transparent />
 
       {/* Page hero */}

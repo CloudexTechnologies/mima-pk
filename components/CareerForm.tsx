@@ -29,7 +29,7 @@ export default function CareerForm() {
     if (file) formData.append('resume', file)
 
     try {
-      const res = await fetch('/api/career', { method: 'POST', body: formData })
+      const res = await fetch('/career.php', { method: 'POST', body: formData })
       if (!res.ok) {
         const json = await res.json()
         throw new Error(json.error || 'Something went wrong.')
