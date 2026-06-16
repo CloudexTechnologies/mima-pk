@@ -172,7 +172,7 @@ const row3 = [
   { src: '/clients/Sana_Safinaz_logo.png',                                   alt: 'Sana Safinaz' },
 ]
 
-function MarqueeRow({ items, cls }: { items: typeof row1; cls?: string }) {
+function MarqueeRow({ items, cls, eager }: { items: typeof row1; cls?: string; eager?: boolean }) {
   return (
     <div className="marquee-row">
       <div className={`marquee${cls ? ` ${cls}` : ''}`}>
@@ -182,8 +182,8 @@ function MarqueeRow({ items, cls }: { items: typeof row1; cls?: string }) {
               <img
                 src={item.src}
                 alt={item.alt}
-                loading="lazy"
-                decoding="async"
+                loading={eager ? 'eager' : 'lazy'}
+                decoding={eager ? 'sync' : 'async'}
               />
             </div>
           ))}
@@ -208,7 +208,7 @@ function MarqueeRow({ items, cls }: { items: typeof row1; cls?: string }) {
 export default function HomePage() {
   return (
     <>
-      <link rel="preload" as="image" href="/backgrounds/indus.png" />
+      <link rel="preload" as="image" href="/backgrounds/indus.webp" />
       <Nav transparent />
 
       {/* ===== HERO ===== */}
@@ -254,7 +254,7 @@ export default function HomePage() {
                   fill
                   sizes="(max-width: 768px) 100vw, (max-width: 1320px) 50vw, 660px"
                   style={{ objectFit: 'cover', objectPosition: 'center' }}
-                  priority={i < 2}
+                  priority
                 />
                 <div className="co-2card__overlay">
                   <Link className="co-2card__cta" href={co.href}>
@@ -274,7 +274,7 @@ export default function HomePage() {
           <span className="label">Architects &amp; Consultants We Collaborate With</span>
           <h3>Trusted by Pakistan&apos;s leading design and consultancy firms.</h3>
         </RevealOnScroll>
-        <MarqueeRow items={partnerRow1} />
+        <MarqueeRow items={partnerRow1} eager />
         <MarqueeRow items={partnerRow2} cls="marquee--rev" />
         <MarqueeRow items={partnerRow3} cls="marquee--slow" />
       </section>
@@ -314,7 +314,7 @@ export default function HomePage() {
           <span className="label">Trusted By Pakistan&apos;s Leading Companies &amp; Institutions</span>
           <h3>A long client list, earned through decades of consistent delivery.</h3>
         </RevealOnScroll>
-        <MarqueeRow items={row1} />
+        <MarqueeRow items={row1} eager />
         <MarqueeRow items={row2} cls="marquee--rev" />
         <MarqueeRow items={row3} cls="marquee--slow" />
       </section>

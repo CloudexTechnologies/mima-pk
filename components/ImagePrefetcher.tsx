@@ -4,7 +4,7 @@ import { useEffect } from 'react'
 
 const PREFETCH_IMAGES = [
   // Home hero (CSS background — critical)
-  '/backgrounds/indus.png',
+  '/backgrounds/indus.webp',
   // About page
   '/backgrounds/standard-chartered.webp',
   // Portfolio page (default hero)

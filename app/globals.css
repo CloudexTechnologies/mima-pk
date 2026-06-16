@@ -571,7 +571,7 @@ body.menu-open .nav__overlay { display: block }
 .hero__bg {
   position: absolute;
   inset: 0;
-  background: url("/backgrounds/indus.png") bottom center/100% auto no-repeat;
+  background: url("/backgrounds/indus.webp") bottom center/100% auto no-repeat;
   background-color: #1a1a1a;
   z-index: -2;
 }
