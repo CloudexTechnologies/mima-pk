@@ -56,6 +56,14 @@ export default function Footer() {
             <a href="#">Terms</a>
           </span>
         </div>
+        <div className="footer__credit">
+          Website developed by{' '}
+          <a href="https://www.crystaltelecom.io" target="_blank" rel="noopener noreferrer">
+            Crystal Telecom
+          </a>
+          {' '}·{' '}
+          <a href="mailto:info@crystaltelecom.io">info@crystaltelecom.io</a>
+        </div>
       </div>
     </footer>
   )
