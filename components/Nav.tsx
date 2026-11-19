@@ -112,6 +112,7 @@ export default function Nav({ transparent = false }: NavProps) {
                 <Link href="/portfolio?cat=banks"         onClick={closeMenu}>Banks                   <ArrowRight size={12} className="menu-arrow" /></Link>
                 <Link href="/portfolio?cat=hospitals"     onClick={closeMenu}>Hospitals               <ArrowRight size={12} className="menu-arrow" /></Link>
                 <Link href="/portfolio?cat=commercials"   onClick={closeMenu}>Commercials             <ArrowRight size={12} className="menu-arrow" /></Link>
+                <Link href="/portfolio?cat=residential"   onClick={closeMenu}>Residential             <ArrowRight size={12} className="menu-arrow" /></Link>
                 <Link href="/portfolio?cat=education"     onClick={closeMenu}>Education               <ArrowRight size={12} className="menu-arrow" /></Link>
                 <Link href="/portfolio?cat=npos"          onClick={closeMenu}>NPOs                    <ArrowRight size={12} className="menu-arrow" /></Link>
               </div>

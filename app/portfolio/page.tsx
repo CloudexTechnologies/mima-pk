@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 
-type Filter = 'all' | 'multinational' | 'banks' | 'hospitals' | 'education' | 'commercials' | 'npos'
+type Filter = 'all' | 'multinational' | 'banks' | 'hospitals' | 'education' | 'commercials' | 'residential' | 'npos'
 
 const SECTOR_META: Record<Filter, { title: string; lede: string; crumb: string; bg?: string }> = {
   all:           { title: 'Building across sectors. Delivering lasting impact.',      lede: "Trusted by Pakistan's leading institutions since 1959, from heritage restoration to high-spec multinational headquarters.", crumb: 'Portfolio' },
@@ -16,6 +16,7 @@ const SECTOR_META: Record<Filter, { title: string; lede: string; crumb: string; 
   hospitals:     { title: 'Hospitals & healthcare.',                                 lede: 'Specialised MEP, medical-gas, and clean-room work for tertiary care, ICUs, and surgical floors.',           crumb: 'Hospitals', bg: '/portfolio/Hospital/LNH.jpg' },
   education:     { title: 'Education & research campuses.',                          lede: 'Academic blocks, research labs, and technology parks, built for long teaching lifetimes.',                   crumb: 'Education', bg: '/portfolio/Education/ivs.jpg' },
   commercials:   { title: 'Commercials, retail, F&B, offices.',                      lede: 'Flagship showrooms, restaurants, and commercial towers, handed over on schedule, on-brand.',                crumb: 'Commercials', bg: '/portfolio/Commericals/muller-phipps.jpg' },
+  residential:   { title: 'Residential towers & apartments.',                       lede: 'High-rise residential towers and apartment complexes across Karachi, built for comfortable, long-term living.',     crumb: 'Residential', bg: '/portfolio/Residential/dulara-empire.webp' },
   npos:          { title: 'Non-profit institutions.',                                lede: 'Outreach centres, community facilities, and heritage restoration for charitable foundations.',               crumb: 'NPOs' },
 }
 
@@ -25,6 +26,7 @@ const FILTERS: { key: Filter; label: string }[] = [
   { key: 'banks',        label: 'Banks'         },
   { key: 'hospitals',    label: 'Hospitals'     },
   { key: 'commercials',  label: 'Commercials'   },
+  { key: 'residential',  label: 'Residential'   },
   { key: 'education',    label: 'Education'     },
   { key: 'npos',         label: 'NPOs'          },
 ]
@@ -36,7 +38,13 @@ const HOSPITAL_IMAGE_VERSION = '20260611'
 const EDUCATION_IMAGE_VERSION = '20260611'
 const COMMERCIAL_IMAGE_VERSION = '20260611'
 
-const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?: string }[] = [
+/** A project shows either its scope of work (`bullets`) or its location (`address`). */
+type Project = { cat: Filter; img: string; name: string; bg?: string } & (
+  | { bullets: string[]; address?: never }
+  | { address: string; bullets?: never }
+)
+
+const PROJECTS: Project[] = [
 
   // ── Multinational ──
   { cat:'multinational', img:'/portfolio/MNCs/1%20sgs.png',                       name:'SGS Pakistan',               bullets:['MEP works','Electrical systems','IT & ELV'] },
@@ -99,6 +107,8 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'education', img:`/portfolio/Education/bccd%20enhancex.png?v=${EDUCATION_IMAGE_VERSION}`,              name:'Beaconhouse College Campus, Defence', bullets:['Civil & interior finishing','Plumbing works','Electrical & IT systems'] },
 
   // ── Commercials ──
+  { cat:'commercials', img:'/portfolio/Commericals/business-bay.webp',            name:'Business Bay',                      address:'Shahrah-e-Faisal, Karachi' },
+  { cat:'commercials', img:'/portfolio/Commericals/dulara-business-centre.webp',  name:'Dulara Business Centre',            address:'Khalid Bin Walid Road, Karachi' },
   { cat:'commercials', img:'/portfolio/Commericals/muller-phipps.jpg',            name:'Muller & Phipps',                   bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/parco%20emerald%20tower.jpg',  name:'PARCO Offices, Emerald Tower',      bullets:['Electrical works','HVAC systems','Firefighting works'] },
   { cat:'commercials', img:'/portfolio/Commericals/fpcl%20.jpg',                  name:'FPCL',                              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
@@ -142,6 +152,12 @@ const PROJECTS: { cat: Filter; img: string; name: string; bullets: string[]; bg?
   { cat:'commercials', img:'/portfolio/Commericals/OBS.jpeg',                     name:'Searle Company',                    bullets:['Civil & MS structure','Electrical works','Allied MEP works'] },
   { cat:'commercials', img:'/portfolio/Commericals/koel.webp',                    name:'Koel',                              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/naurattan.png',                name:'Naurattan Jewellers',               bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
+
+  // ── Residential ──
+  { cat:'residential', img:'/portfolio/Residential/dulara-empire.webp',           name:'Dulara Empire',                     address:'Shaheed-e-Millat, Karachi' },
+  { cat:'residential', img:'/portfolio/Residential/dd-tower.webp',                name:'DD Tower',                          address:'Shaheed-e-Millat, Karachi' },
+  { cat:'residential', img:'/portfolio/Residential/dulara-residency.webp',        name:'Dulara Residency',                  address:'Karachi, Pakistan' },
+  { cat:'residential', img:'/portfolio/Residential/upcoming-project.webp',        name:'Upcoming Project',                  address:'Coming soon' },
 
   // ── NPOs ──
   { cat:'npos', img:'/portfolio/NPOS/hunar-foundation.png',                       name:'Hunar Foundation',        bullets:['MEP works','Electrical systems','Plumbing & HVAC'] },
@@ -223,9 +239,13 @@ function PortfolioContent() {
                   <Image src={p.img} alt={p.name} fill sizes="(max-width: 768px) 100vw, 33vw" style={{ objectFit: p.bg ? 'contain' : 'cover', padding: p.bg ? '20px' : undefined }} />
                 </div>
                 <h3 className="card__name">{p.name}</h3>
-                <ul className="card__bullets">
-                  {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
-                </ul>
+                {p.bullets ? (
+                  <ul className="card__bullets">
+                    {p.bullets.map((b, j) => <li key={j}>{b}</li>)}
+                  </ul>
+                ) : (
+                  <p className="card__address">{p.address}</p>
+                )}
               </div>
             ))}
           </div>
