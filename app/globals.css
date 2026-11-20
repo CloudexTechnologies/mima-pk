@@ -1178,7 +1178,16 @@ body.menu-open .nav__overlay { display: block }
 }
 .sector:hover img { transform: scale(1.05); opacity: 1 }
 .sector:hover .sector__cta { transform: translateY(0); opacity: 1 }
-@media (max-width: 980px) { .sectors { grid-template-columns: repeat(2,1fr) } }
+/* A lone card in the last row sits centred instead of hugging the left edge */
+.sector:last-child:nth-child(3n+1) { grid-column: 2 }
+@media (max-width: 980px) {
+  .sectors { grid-template-columns: repeat(2,1fr) }
+  .sector:last-child:nth-child(3n+1) { grid-column: auto }
+  .sector:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 12px) }
+}
+@media (max-width: 560px) {
+  .sector:last-child:nth-child(odd) { grid-column: auto; width: auto; justify-self: stretch }
+}
 @media (max-width: 640px) {
   .portfolio__head { flex-direction: column; align-items: flex-start; gap: 12px }
   .portfolio__head .right { max-width: 100% }

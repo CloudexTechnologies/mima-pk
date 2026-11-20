@@ -26,6 +26,7 @@ const sectors = [
   { num: '04', label: 'Education',       count: 'NASTP · Universities',           img: '/portfolio/Education/ivs.jpg',                           href: '/portfolio?cat=education',     name: 'Education' },
   { num: '05', label: 'Commercials',     count: 'Retail · F&B · Offices',         img: '/old-project/goolotlo.png',                              href: '/portfolio?cat=commercials',   name: 'Commercials' },
   { num: '06', label: 'NPOs',            count: 'Non-Profit Institutions',         img: '/portfolio/Hospital/JPMC.jpeg',                          href: '/portfolio?cat=npos',          name: 'NPOs', imgPos: '30% center' },
+  { num: '07', label: 'Residential',     count: 'Dulara Empire · DD Tower',        img: '/portfolio/Residential/dulara-empire.webp',              href: '/portfolio?cat=residential',   name: 'Residential' },
 ]
 
 const INTEG_LOGO = '/partner-logos/integ.png?v=20260616'
@@ -289,7 +290,7 @@ export default function HomePage() {
                 Building Across Sectors. Delivering Lasting Impact.
               </h2>
             </div>
-            <p className="right">Six sectors. Hundreds of projects. A long, quiet record of execution for
+            <p className="right">Seven sectors. Hundreds of projects. A long, quiet record of execution for
               Pakistan&apos;s most demanding clients.</p>
           </RevealOnScroll>
 
