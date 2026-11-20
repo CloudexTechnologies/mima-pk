@@ -9,14 +9,17 @@ import Footer from '@/components/Footer'
 
 type Filter = 'all' | 'multinational' | 'banks' | 'hospitals' | 'education' | 'commercials' | 'residential' | 'npos'
 
-const SECTOR_META: Record<Filter, { title: string; lede: string; crumb: string; bg?: string }> = {
+type HeroVideo = { src: string; srcMobile: string }
+
+const SECTOR_META: Record<Filter, { title: string; lede: string; crumb: string; bg?: string; video?: HeroVideo }> = {
   all:           { title: 'Building across sectors. Delivering lasting impact.',      lede: "Trusted by Pakistan's leading institutions since 1959, from heritage restoration to high-spec multinational headquarters.", crumb: 'Portfolio' },
   multinational: { title: 'Multinational headquarters & facilities.',                lede: 'Purpose-built offices and laboratories for global firms operating in Pakistan, delivered to international fit and finish standards.',  crumb: 'Multinational Companies' },
   banks:         { title: 'Banks & financial institutions.',                         lede: 'Branch rollouts, regional offices, and heritage restorations, discreet, secure, and on-brand.',              crumb: 'Banks', bg: '/portfolio/Banks/1%20standard%20chartered.webp' },
   hospitals:     { title: 'Hospitals & healthcare.',                                 lede: 'Specialised MEP, medical-gas, and clean-room work for tertiary care, ICUs, and surgical floors.',           crumb: 'Hospitals', bg: '/portfolio/Hospital/LNH.jpg' },
   education:     { title: 'Education & research campuses.',                          lede: 'Academic blocks, research labs, and technology parks, built for long teaching lifetimes.',                   crumb: 'Education', bg: '/portfolio/Education/ivs.jpg' },
   commercials:   { title: 'Commercials, retail, F&B, offices.',                      lede: 'Flagship showrooms, restaurants, and commercial towers, handed over on schedule, on-brand.',                crumb: 'Commercials', bg: '/portfolio/Commericals/muller-phipps.jpg' },
-  residential:   { title: 'Residential towers & apartments.',                       lede: 'High-rise residential towers and apartment complexes across Karachi, built for comfortable, long-term living.',     crumb: 'Residential', bg: '/portfolio/Residential/dulara-empire.webp' },
+  residential:   { title: 'Residential towers & apartments.',                       lede: 'High-rise residential towers and apartment complexes across Karachi, built for comfortable, long-term living.',     crumb: 'Residential', bg: '/portfolio/Residential/residential-hero-poster.webp',
+                   video: { src: '/portfolio/Residential/residential-hero.mp4', srcMobile: '/portfolio/Residential/residential-hero-720.mp4' } },
   npos:          { title: 'Non-profit institutions.',                                lede: 'Outreach centres, community facilities, and heritage restoration for charitable foundations.',               crumb: 'NPOs' },
 }
 
@@ -187,6 +190,16 @@ function PortfolioContent() {
     router.replace(`/portfolio?cat=${f}`, { scroll: false })
   }
 
+  // Background videos only play for visitors who haven't asked for reduced motion
+  const [allowMotion, setAllowMotion] = useState(false)
+  useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)')
+    const sync = () => setAllowMotion(!mq.matches)
+    sync()
+    mq.addEventListener('change', sync)
+    return () => mq.removeEventListener('change', sync)
+  }, [])
+
   const meta = SECTOR_META[filter]
   const visible = PROJECTS.filter(p => filter === 'all' || p.cat === filter)
 
@@ -201,6 +214,12 @@ function PortfolioContent() {
 
       {/* Page hero */}
       <section className="phero phero--has-bg" style={{ backgroundImage: `url(${heroImg})` }}>
+        {meta.video && allowMotion && (
+          <video key={filter} className="phero__video" autoPlay muted loop playsInline poster={heroImg} aria-hidden="true">
+            <source src={meta.video.src} media="(min-width: 769px)" type="video/mp4" />
+            <source src={meta.video.srcMobile} type="video/mp4" />
+          </video>
+        )}
         <div className="container">
           <div className="phero__crumbs">
             <Link href="/">MIMA Group</Link>
