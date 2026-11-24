@@ -454,6 +454,13 @@ body.menu-open .nav__overlay { display: block }
     linear-gradient(180deg, rgba(0,0,0,.05) 0%, rgba(0,0,0,0) 50%, rgba(0,0,0,.18) 100%);
   z-index: 1;
 }
+/* Daytime video footage is brighter than the still heroes: shade the nav strip and text side more */
+.phero--video::before {
+  background:
+    linear-gradient(180deg, rgba(0,0,0,.5) 0%, rgba(0,0,0,0) 24%),
+    linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.42) 40%, rgba(0,0,0,.08) 68%),
+    linear-gradient(180deg, rgba(0,0,0,0) 55%, rgba(0,0,0,.3) 100%);
+}
 .phero__video {
   position: absolute;
   inset: 0;
@@ -1900,6 +1907,11 @@ body.menu-open .nav__overlay { display: block }
 .card__bullets li {
   font-size: 11px; color: var(--fg-body); line-height: 1.5;
   padding-left: 14px; position: relative;
+}
+.card__completed {
+  margin: 8px 0 0; padding: 0 12px;
+  font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--accent); font-weight: 500;
 }
 .card__bullets li::before {
   content: "—"; position: absolute; left: 0;

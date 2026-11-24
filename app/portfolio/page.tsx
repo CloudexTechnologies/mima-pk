@@ -41,8 +41,8 @@ const HOSPITAL_IMAGE_VERSION = '20260611'
 const EDUCATION_IMAGE_VERSION = '20260611'
 const COMMERCIAL_IMAGE_VERSION = '20260611'
 
-/** A project shows either its scope of work (`bullets`) or its location (`address`). */
-type Project = { cat: Filter; img: string; name: string; bg?: string } & (
+/** A project shows either its scope of work (`bullets`) or its location (`address`), plus an optional completion date. */
+type Project = { cat: Filter; img: string; name: string; bg?: string; completed?: string } & (
   | { bullets: string[]; address?: never }
   | { address: string; bullets?: never }
 )
@@ -118,6 +118,7 @@ const PROJECTS: Project[] = [
   { cat:'commercials', img:'/portfolio/Commericals/dialog-axiata.jpg',            name:'Dialog Axiata',                     bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/one%20ibl%20tower.jpeg',       name:'One IBL Center',                    bullets:['Civil & interior finishing','Electrical works','IT systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/habitt%20market.jpeg',         name:'Habitt Showroom',                   bullets:['Interior finishing','Plumbing & firefighting','Electrical & HVAC'] },
+  { cat:'commercials', img:'/portfolio/Commericals/habitt-shaheen.webp',          name:'Habitt Shaheen',                    bullets:['Electrical works','Interior design works'], completed:'January 2025' },
   { cat:'commercials', img:'/portfolio/Commericals/continental%20biscuit%20.jpg', name:'Continental Biscuits',              bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
   { cat:'commercials', img:'/portfolio/Commericals/k%20electric%20.jpg',          name:'K-Electric KTGTP Grid Station',     bullets:['Civil works','Electrical & IT works','HVAC systems'] },
   { cat:'commercials', img:'/portfolio/Commericals/oasis%20aqua%20resort.jpg',    name:'Oasis Golf & Aqua Resort',           bullets:['MEP works','Mechanical systems','Electrical & plumbing'] },
@@ -213,7 +214,7 @@ function PortfolioContent() {
       <Nav transparent />
 
       {/* Page hero */}
-      <section className="phero phero--has-bg" style={{ backgroundImage: `url(${heroImg})` }}>
+      <section className={`phero phero--has-bg${meta.video ? ' phero--video' : ''}`} style={{ backgroundImage: `url(${heroImg})` }}>
         {meta.video && allowMotion && (
           <video key={filter} className="phero__video" autoPlay muted loop playsInline poster={heroImg} aria-hidden="true">
             <source src={meta.video.src} media="(min-width: 769px)" type="video/mp4" />
@@ -265,6 +266,7 @@ function PortfolioContent() {
                 ) : (
                   <p className="card__address">{p.address}</p>
                 )}
+                {p.completed && <p className="card__completed">Completed {p.completed}</p>}
               </div>
             ))}
           </div>
